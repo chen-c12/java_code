@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange</title>
+    <script type="text/javascript">
+        /*静态*/
+        function www() {
+            alert("bbbbbbb");
+        }
+        /*动态*/
+        window.onload = function () {
+            var ww = document.getElementById("a03");
+            ww.onchange = function () {
+                alert("改动了");
+            }
+        }
+    </script>
+</head>
+<body>
+    请选择：
+<!--    <select onchange="www();">-->
+    <select id="a03">
+        <option>--女生--</option>
+        <option>ffffffff</option>
+        <option>wwwwwwww</option>
+        <option>eeeeeeee</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onload注册事件</title>
+    <script type="text/javascript">
+        var ale = function () {
+            alert("静态注册onload事件，所有代码");
+            /*动态注册*/
+        }
+            window.onload = function () {
+                alert("动态注册的onload事件");
+            }
+    </script>
+</head>
+    <!--静态onload事件-->
+<!--<body onload="ale();">-->
+
+    <!--动态onload事件-->
+<!--onload事件动态注册是固定写法-->
+<body >
+</body>
+</html>

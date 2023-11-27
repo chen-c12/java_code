@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choose</title>
+    <script type="text/javascript" src="../jQuery-1/jQuery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            //全选按钮
+            $("#checkedall").click(function () {
+                $(":checkbox").prop("checked", true);
+            });
+            //全不选按钮
+            $("#notcheckedall").click(function () {
+                $(":checkbox").prop("checked", false);
+            });
+            // 反选按钮
+            $("#offchecked").click(function () {
+                $(":checkbox[name='items']").each(function () {
+                    this.checked = !this.checked;
+                });
+                //全选/全不选点击按钮跟随
+                var allCount = $(":checkbox[name='items']").length;
+                var Count = $(":checkbox[name='items']:checked").length;
+                $("#checkbox").prop("checked",allCount == Count);
+            });
+            //全选、全不选按钮的操作
+            $("#checkbox").click(function (3) {
+                $(":checkbox[name='items']").prop("checked",this.checked);
+            });
+            // 多选按钮与全选/全不选按钮绑定
+            $(":checkbox[name='items']").click(function () {
+                var allCount = $(":checkbox[name='items']").length;
+                var Count = $(":checkbox[name='items']:checked").length;
+                $("#checkbox").prop("checked",allCount == Count);
+            });
+        });
+    </script>
+</head>
+<body>
+    <form method="get" action="">
+        你爱好的运动什么？<input type="checkbox" id="checkbox" />全选/全不选
+        <br/>
+        <input type="checkbox" name="items" value="football"/>足球
+        <input type="checkbox" name="items" value="basktball"/>篮球
+        <input type="checkbox" name="items" value="yumao"/>羽毛球
+        <input type="checkbox" name="items" value="ppq"/>乒乓球
+        <br/>
+        <input type="button" id="checkedall" value="全选"/>
+        <input type="button" id="notcheckedall" value="全不选"/>
+        <input type="button" id="offchecked" value="反选"/>
+
+    </form>
+</body>
+</html>

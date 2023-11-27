@@ -1,0 +1,42 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: mail
+
+    #邮箱基本配置
+    #邮箱配置发送验证码
+  mail:
+    host: smtp.qq.com
+    protocol: smtp
+    default-encoding: UTF-8
+    username: 474436011@qq.com
+    password: ihlxhuofjcpycagh
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://114.132.190.62:3306/mail?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: Chenjing679394
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+mybatis-plus:
+  mapper-locations: classpath*:**/xml/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 0 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 1 # 逻辑未删除值(默认为 0)

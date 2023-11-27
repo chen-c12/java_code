@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--使用context来获取其他文件的内容
+<context:property-placeholder location="classpath:jdbc.properties"/>
+    &lt;!&ndash;配置连接池&ndash;&gt;
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
+        <property name="url" value="${prop.url}" />
+        <property name="username" value="${prop.userName}" />
+        <property name="password" value="${prop.password}" />
+        <property name="driverClassName" value="${prop.driverClass}" />
+    </bean>-->
+    
+    
+    
+    <!--开启组件扫描-->
+    <context:component-scan base-package="com.chen.spring5"></context:component-scan>
+</beans>

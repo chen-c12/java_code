@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>picture</title>
+    <script type="text/javascript" src="../jQuery-1/jQuery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#small").bind("mouseover mouseout mousemove",function (event) {
+                if (event.type == "mouseover") {
+                    $("#showBig").show();
+                }else if (event.type == "mouseout") {
+                    $("#showBig").hide();
+                }else if (event.type == "mousemove") {
+                    console.log(event);
+                    $("#showBig").offset({
+                        left:event.pageX + 10,
+                        top:event.pageY + 10
+                    });
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <img id="small" src="../png/04.jpeg" />
+
+    <div id="showBig">
+        <img src="../png/03.jpeg">
+    </div>
+</body>
+</html>

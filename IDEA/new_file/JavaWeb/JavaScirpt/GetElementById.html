@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById</title>
+    <script type="text/javascript">
+        function qq() {
+            var user = document.getElementById("a05");
+            var users = user.value;
+            var suse = /^\w{5,12}$/;
+            var co = document.getElementById("a06");
+            co.innerHTML = "";
+            if (suse.test(users)){
+                co.innerHTML = "<img src=\"../png/true.png\" width=\"18\" height=\"18\">";
+            } else {
+                co.innerHTML = "<img src=\"../png/false.png\" width=\"18\" height=\"18\">";
+            }
+        }
+
+    </script>
+</head>
+<body>
+用户名：<input type="text" id="a05" value=""/>
+<span id="a06" style="color: red;"></span>
+<button onclick="qq()">校验</button>
+</body>
+</html>

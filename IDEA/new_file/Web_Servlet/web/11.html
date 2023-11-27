@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>改变背景颜色</title>
+    <script type="text/javascript">
+        var userName = prompt("请你输入登录信息", '');
+        if (userName === 'aa') {
+            var pass = prompt('密码是?', '');
+            if (pass === '123456') {
+                alert( '登录成功!' );
+            } else if (pass === '' || pass === null) {
+                alert( '已取消' );
+            } else {
+                alert( '密码错误' );
+            }
+        } else if (userName === '' || userName === null) {
+            alert( '已取消' );
+        } else {
+            alert( "?????" );
+        }
+    </script>
+</head>
+<body>
+<!--<div style="margin-top: 100px;margin-left: 100px;">
+    <button type="button" onclick="ChangeBackgroundColor('red')">红</button>
+    <button type="button" onclick="ChangeBackgroundColor('blue')">蓝</button>
+    <button type="button" onclick="ChangeBackgroundColor('green')">绿</button>
+</div>
+
+<script type="text/javascript">
+    function ChangeBackgroundColor(new_bgcolor) {
+        document.bgColor = new_bgcolor;
+    }
+</script>-->
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jQuery-1/jQuery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //删除函数式
+            var deleteFun = function(){
+                    var $tt =  $(this).parent().parent();
+                    var name = $tt.find("td:first").text();
+                    /*confirm是询问用户是否确认*/
+                    if (confirm("确定删除["+name+"]吗？")) {
+                        $tt.remove();
+                    }
+                /*return false可以阻止元素的默认行为*/
+                    return false;
+            };
+
+
+            //submit按钮绑定单击事件
+            $("#addEmpButton").click(function () {
+                var name = $("#empName").val();
+                var email = $("#email").val();
+                var salary = $("#salary").val();
+                /*用户数据保存格式*/
+                var $str = $("<tr>" +
+                    "            <td>"+name+"</td>" +
+                    "            <td>"+email+"</td>" +
+                    "            <td>"+salary+"</td>" +
+                    "            <td><a href=\"\">Delete</a> </td>" +
+                    "        </tr>");
+                /*用户数据添加*/
+                $str.appendTo($("#a01"));
+                /*用户删除添加后的内容*/
+                $str.find("a").click(deleteFun);
+                    });
+            /*用户删除原本的内容*/
+            $("a").click(deleteFun);
+        });
+    </script>
+</head>
+<body>
+    <table id="a01" style="border-style: solid;" align="center">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salay</th>
+            <th> </th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@.com</td>
+            <td>500</td>
+            <td><a href="">Delete</a> </td>
+        </tr>
+        <tr>
+            <td>Jhon</td>
+            <td>Jhon@.com</td>
+            <td>5000</td>
+            <td><a href="">Delete</a> </td>
+        </tr>
+        <tr>
+            <td>Json</td>
+            <td>Json@.com</td>
+            <td>100</td>
+            <td><a href="">Delete</a> </td>
+        </tr>
+    </table>
+    <br/>
+    <div id="a02">
+        <table style="border-style: solid;" align="center">
+            <tr>
+            <td class="word">name:</td>
+            <td class="inp">
+                <input type="text"name="empName" id="empName" />
+            </td>
+            </tr>
+            <tr>
+            <td class="word">email:</td>
+            <td class="inp">
+                <input type="text"name="email" id="email" />
+            </td>
+            </tr>
+            <tr>
+            <td class="word">salary:</td>
+            <td class="inp">
+                <input type="text"name="salary" id="salary" />
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="addEmpButton" value="abc">
+                        Submit
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

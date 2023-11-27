@@ -1,0 +1,42 @@
+div{
+    /*border: 1px solid red;*/
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+body{
+    background-color: white;
+}
+table{
+    width: 300px;
+    height: 300px;
+    border: blue;
+    border-collapse: collapse;
+}
+/*填写的表格*/
+/*#a1{*/
+/*    position: fixed;*/
+/*}*/
+/*导航栏*/
+ul{
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:cornflowerblue;
+}
+li{
+    float:left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: red;
+}

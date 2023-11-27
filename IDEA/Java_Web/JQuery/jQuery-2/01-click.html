@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script type="text/javascript" src="../jQuery-1/jQuery.js"></script>
+    <script type="text/javascript">
+        /*window.onload = function () {
+            var btnbj = document.getElementById("btn01");
+            alert(btnbj);
+            btnbj.onclick = function () {
+                alert("js原生的单击事件");
+            }
+        }*/
+        $(function () {
+            var $btnbj = $("button");
+            $btnbj.click(function () {
+                alert("jQuery的单击事件");
+            });
+        });
+        $(function () {
+            alert("页面加载完成后，自动调用");
+        })
+    </script>
+</head>
+<body>
+<button id="btn01">sayHello</button>
+</body>
+</html>

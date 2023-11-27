@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cartoon</title>
+    <script type="text/javascript" src="../jQuery-1/jQuery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $div = $("#d01");
+            var re = function (){$div.toggle(1000,re)};
+            $("#a01").click(function () {
+                $div.show(1000,function () {
+                    $div.hide(1000);
+                });
+            });
+
+            $("#a02").click(function () {
+               $div.hide(1000);
+            });
+
+            $("#a03").click(function () {
+                $div.toggle(1000,re);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <button id="a01">show按钮</button>
+            </td>
+            <td>
+                <button id="a02">hide按钮</button>
+            </td>
+            <td>
+                <button id="a03">toggle按钮</button>
+            </td>
+        </tr>
+    </table>
+    <div id="d01" align="left" style="background-color: red;width: 200px;height: 200px;text-align: center;">
+        <span><font color="white"><p>区德远牛逼！！！</p></font> </span>
+    </div>
+</body>
+</html>

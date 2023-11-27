@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字网站</title>
+<!--    <meta http-equiv="refresh" content="5";url="http://www.baidu.com">-->
+    <style type="text/css">
+        form{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<form>    <h3 align="center">学生信息注册</h3></form>
+<hr color="black" width="100%" />
+<!--    <h3 align="center">学生信息注册</h3>-->
+    <table align="center">
+        <tr>
+            <th>姓名：</th>
+            <th><input type="text"maxlength="4"></th>
+        </tr>
+        <tr>
+            <th>性别：</th>
+            <th><input type="radio" name="sex">男
+            <input type="radio" name="sex">女</th>
+        </tr>
+        <tr>
+            <th>出生日期：</th>
+            <th><input type="text"></th>
+            <th>格式：yyyy-xx-dd</th>
+        </tr>
+        <tr>
+            <th>学校：</th>
+            <th><input type="text"></th>
+        </tr>
+        <tr>
+            <th>专业：</th>
+            <th>
+                <select name="stu1">
+                    <option>网络工程</option>
+                    <option selected>计算机科学与技术</option>
+                    <option>物联网工程</option>
+                    <option>应用数学</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+            <th>喜欢的运动</th>
+            <th colspan="2">
+                <input type="checkbox" name="bs" checked="checked">篮球
+                <input type="checkbox" name="fo">足球
+                <input type="checkbox" name="bb">兵乓球
+                <input type="checkbox" name="yb">羽毛球
+            </th>
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
+</body>
+</html>

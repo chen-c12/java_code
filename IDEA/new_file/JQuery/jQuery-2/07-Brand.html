@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brand</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+            text-align: center;
+        }
+        li{
+            display: inline;
+        }
+        a{
+            color: #04D;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #F50;
+            text-decoration: underline;
+        }
+        .Sub ul{
+            list-style: none;
+        }
+        .Sub ul li{
+            display: block;
+            float: left;
+            width: 200px;
+            line-height: 20px;
+        }
+        .show a, .showless a{
+            clear: both;
+            width: 120px;
+            margin: 0 auto;
+            line-height: 24px;
+            border: 1px solid #AAA;
+        }
+        .show a span{
+            padding-left: 15px;
+        }
+        .showless a span{
+            padding-left: 15px;
+        }
+        .promoted a{
+            color: #FF5500;
+        }
+    </style>
+    <script type="text/javascript" src="../jQuery-1/jQuery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            /*将元素隐藏*/
+            $("li:gt(5):not(:last)").hide();
+            $("div div a").click(function () {
+                /*将元素展出或隐藏（功能键）*/
+                $("li:gt(5):not(:last)").toggle();
+                if ($("li:gt(5):not(:last)").is(":hidden")){
+                    /*未点击时显示的内容*/
+                    $("div div a span").text("显示详细品牌");
+
+                    /*样式字体颜色*/
+                    $("div div").removeClass();
+                    $("div div").addClass("show");
+
+                /*去掉高亮*/
+                    $("li:contains('华为')").removeClass("promoted");
+
+                } else {
+                    /*点击后显示的内容*/
+                    $("div div a span").text("显示精简品牌");
+
+                    /*样式字体颜色*/
+                    $("div div").removeClass();
+                    $("div div").addClass("showless");
+                  /*  加高亮*/
+                    $("li:contains('华为')").addClass("promoted");
+                }
+                    /*阻止网页跳转*/
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="Sub">
+        <ul>
+            <li><a href="#">佳能</a><i>(30440)</i> </li>
+            <li><a href="#">索尼</a><i>(3023)</i> </li>
+            <li><a href="#">三星</a><i>(32220)</i> </li>
+            <li><a href="#">华为</a><i>(304450)</i> </li>
+            <li><a href="#">小米</a><i>(3043)</i> </li>
+            <li><a href="#">努比亚</a><i>(30110)</i> </li>
+            <li><a href="#">OPPO</a><i>(40440)</i> </li>
+            <li><a href="#">VIVO</a><i>(5440)</i> </li>
+            <li><a href="#">IQOO</a><i>(55550)</i> </li>
+            <li><a href="#">Relme</a><i>(3049)</i> </li>
+            <li><a href="#">iPhone</a><i>(3550)</i> </li>
+            <li><a href="#">魅族</a><i>(30440)</i> </li>
+            <li><a href="#">中兴</a><i>(30880)</i> </li>
+            <li><a href="#">酷派</a><i>(309940)</i> </li>
+            <li><a href="#">荣耀</a><i>(304540)</i> </li>
+            <li><a href="#">卡西欧</a><i>(25440)</i> </li>
+            <li><a href="#">松下</a><i>(86440)</i> </li>
+            <li><a href="#">台积电</a><i>(80640)</i> </li>
+            <li><a href="#">骁龙</a><i>(58340)</i> </li>
+            <li><a href="#">麒麟</a><i>(30450)</i> </li>
+        </ul>
+        <div class="show">
+            <a href=""><span>显示全部品牌</span></a>
+        </div>
+    </div>
+</body>
+</html>

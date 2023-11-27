@@ -1,0 +1,39 @@
+package t_userSQL.dao;
+
+import t_userSQL.pojo.Book;
+
+import java.util.List;
+
+/**
+ * @author Н№гу
+ * @title: BookDao
+ * @projectName WebTmp
+ * @description: TODO
+ * @date 2021/10/3115:35
+ */
+public interface BookDao {
+
+    public int addBook(Book book);
+
+
+    public int deleteBookById(Integer id);
+
+
+
+    public int updateBook(Book book);
+
+
+    public Book queryBookById(Integer id);
+
+
+    public List<Book> queryBook();
+
+
+    Integer queryForPageTotalCount();
+
+    List<Book> queryForPageItems(int begin,int pageSize);
+
+    Integer queryForPageTotalCountByPrice(int min, int max);
+
+    List<Book> queryForPageItemsByPrice(int begin, int pageSize,int min,int max);
+}

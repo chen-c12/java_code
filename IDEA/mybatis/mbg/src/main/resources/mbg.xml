@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/mybatis?useSSL=false"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--实现类javabean-->
+        <javaModelGenerator targetPackage="com.mybatis.pojo" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--mapper的xml文件-->
+        <sqlMapGenerator targetPackage="resources"  targetProject=".\src\main">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--mapper接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mybatis.dao"  targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table tableName="tbl_employee" domainObjectName="Employee" ></table>
+        <table tableName="tbl_dept" domainObjectName="Dept"></table>
+    </context>
+</generatorConfiguration>

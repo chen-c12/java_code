@@ -1,0 +1,27 @@
+spring:
+  security:
+    user:
+      name: user
+      password: 123456
+  thymeleaf:
+    cache: false
+    #数据源配置
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/springsecurity?charaterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  #mybatis相关配置
+  #mapper目录必须使用"/"
+mybatis:
+  mapper-locations: classpath:com/chendd/mapper/*.xml
+  type-aliases-package: com.chenddd.security.entity
+
+  #日志处理   为了展示mybatis运行sql语句
+logging:
+  level:
+    com:
+      chenddd:
+        security: debug

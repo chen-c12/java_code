@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick</title>
+    <script type="text/javascript">
+        function onclickk() {
+            alert("onclick注册事件");
+        }
+        window.onload = function () {
+            /*1.获取标签对象
+            * 2.通过标签对象.时间名 = function(){};*/
+            var onc = document.getElementById('a01');
+            onc.onclick = function () {
+                alert("动态注册事件");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="onclickk();">按钮1</button>
+    <button id="a01">按钮2</button>
+</body>
+</html>

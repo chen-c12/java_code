@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: prod
+#active: dev
+#发送给谁
+sendto:
+  email: chen474436011@163.com

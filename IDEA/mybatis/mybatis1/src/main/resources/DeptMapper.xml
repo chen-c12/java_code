@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.ddd.mybatis.test.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ddd.mybatis.test.DeptMapper">
+
+    <resultMap id="MyDept" type="com.ddd.mybatis.pojo.Department">
+        <id column="id" property="id"></id>
+        <result column="dept_name" property="departmentName"></result>
+        <collection property="emps"
+                    select="com.ddd.mybatis.mybatis_resultMap.Mybatis_plus.getEmpById" column="id" >
+        </collection>
+    </resultMap>
+    <select id="getDepartment" resultMap="MyDept">
+        select * from tbl_dept where id=#{id}
+    </select>
+
+</mapper>

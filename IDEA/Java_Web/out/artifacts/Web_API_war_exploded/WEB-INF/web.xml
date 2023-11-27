@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>forwardC</servlet-name>
+        <servlet-class>com.ddd.servlet.ForwardC</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>param1</servlet-name>
+        <servlet-class>com.ddd.servlet.ParamServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Request1</servlet-name>
+        <servlet-class>com.ddd.servlet.RequestAPI_Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>response1</servlet-name>
+        <servlet-class>com.ddd.servlet.Response</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>response2</servlet-name>
+        <servlet-class>com.ddd.servlet.Response2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>response3</servlet-name>
+        <servlet-class>com.ddd.servlet.ResponseIO</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servlet</servlet-name>
+        <servlet-class>com.ddd.servlet.Servlet1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servlet1</servlet-name>
+        <servlet-class>com.ddd.servlet.Servlet2</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>forwardC</servlet-name>
+        <url-pattern>/forC</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>param1</servlet-name>
+        <url-pattern>/param1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Request1</servlet-name>
+        <url-pattern>/request1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>response1</servlet-name>
+        <url-pattern>/response1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>response2</servlet-name>
+        <url-pattern>/response2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>response3</servlet-name>
+        <url-pattern>/response3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlet</servlet-name>
+        <url-pattern>/servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlet1</servlet-name>
+        <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+</web-app>

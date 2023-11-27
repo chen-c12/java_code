@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.chen.spring5.domain.User"></bean>
+
+    <bean id="book" class="com.chen.spring5.domain.Book" scope="prototype">
+        <constructor-arg name="author" value="java"/>
+        <constructor-arg name="name" value="chen"/>
+    </bean>
+    <bean id="order" class="com.chen.spring5.domain.Order">
+        <property name="name" value="chenee"></property>
+        <property name="order" value="111"></property>
+    </bean>
+
+    <bean id="course" class="Factory.MyBean"></bean>
+</beans>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onblur</title>
+    <script type="text/javascript">
+        function onblurss() {
+            console.log("静态注册失去焦点事件");
+        }
+        window.onload = function () {
+            var on = document.getElementById("a02");
+            on.onblur = function () {
+                console.log("动态注册失去焦点事件")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>用户名：</td>
+            <td><input type="text" onblur="onblurss()" /><br/></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input type="password" id="a02" /><br/></td>
+        </tr>
+    </table>
+</body>
+</html>

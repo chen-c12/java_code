@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dog" class="com.chen.spring5.domain.Dog" autowire="byName">
+        <property name="dage" value="12"></property>
+        <property name="dname" value="xiao"></property>
+        <property name="person" ref="person"></property>
+    </bean>
+    <bean id="person" class="com.chen.spring5.domain.Person">
+        <property name="aname" value="chen"></property>
+    </bean>
+</beans>

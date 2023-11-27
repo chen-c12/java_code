@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调查</title>
+</head>
+<body>
+<form action="http://localhost:8080" method="get">
+    <input type="hidden" name="action" value="login" />
+    <h1 align="center">用户体验调查</h1>
+    <table align="center">
+        <tr>
+            <td>姓名:</td>
+            <td><input name="name" type="text"/><br/></td>
+        </tr>
+        <tr>
+            <td>身份证号码:</td>
+            <td><input name="number" type="password"/><br/></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input name="password" type="password"/><br/></td>
+        </tr>
+        <tr>
+            <td>喜欢项目:</td>
+            <td><input type="radio" value="java" name="sex"/>java
+                <input type="radio" value="python" name="sex"/>python</td>
+        </tr>
+        <tr>
+            <td>选项:</td>
+            <td><input name="nation" type="checkbox" value="china"/>中国
+                <input name="nation" type="checkbox" value="usa"/>美国
+                <input name="nation" type="checkbox" value="en"/>英国<br/>
+            </td>
+        </tr>
+        <tr>
+            <td>喜欢的颜色:</td>
+            <td><select name="color">
+                <option value="红">red</option>
+                <option selected="selected" value="绿">green</option>
+                <option value="黄">yellow</option>
+            </select><br/>
+            </td>
+        </tr>
+        <tr align="middle">
+            <td><input type="reset" value="重置"/>
+                <input type="button" value="确定"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

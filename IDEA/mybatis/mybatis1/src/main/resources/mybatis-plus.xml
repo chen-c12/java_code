@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.ddd.mybatis.test.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ddd.mybatis.mybatis_resultMap.Mybatis_plus">
+
+  <!--  getEmployeeId-->
+    <resultMap id="MyEmp" type="com.ddd.mybatis.pojo.Employee">
+        <id column="id" property="id"></id>
+    </resultMap>
+    <select id="getEmployeeId" resultMap="MyEmp">
+        select * from tbl_employee where id=#{id}
+    </select>
+
+
+    <!--联查-->
+    <resultMap id="MyEmployee" type="com.ddd.mybatis.pojo.Employee">
+        <id column="id" property="id" />
+        <result column="last_name" property="last_name" />
+        <result column="gender" property="gender" />
+<!--        <result column="did" property="department.id" />-->
+<!--        <result column="dept_name" property="department.departmentName" />-->
+
+        <association property="department" javaType="com.ddd.mybatis.pojo.Department">
+            <id column="did" property="id"></id>
+            <result property="departmentName" column="dept_name"></result>
+        </association>
+    </resultMap>
+
+    <select id="getEmpAndDept" resultMap="MyEmployee">
+        select e.id id,e.last_name last_name,e.gender gender,e.d_id d_id,
+        d.id did,d.dept_name dept_name from tbl_employee e,tbl_dept d
+        where e.d_id=d.id and e.id=#{id}
+    </select>
+
+    <select id="getEmpById" resultType="com.ddd.mybatis.pojo.Employee">
+        select * from tbl_employee where d_id=#{d_id}
+    </select>
+
+</mapper>

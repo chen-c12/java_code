@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.ddd.mybatis.test.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.myIn.EmpMapper">
+    <!--public List<Emp> getEmpList(Emp emp);-->
+    <select id="getEmpList" resultType="com.chen.pojo.Emp">
+        select * from tbl_employee
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+            <if test="last_name!=null">
+                and last_name=#{last_name}
+            </if>
+            <if test="gender=0 or gender=1">
+                and gender=#{gender}
+            </if>
+        </where>
+    </select>
+    
+    <!--public List<Emp> getforid(Integer id);-->
+    <select id="getforid" resultType="com.chen.pojo.Emp">
+        select * from tbl_employee where id in
+            <foreach collection="id" item="ids" open="(" close=")" separator=",">
+                #{ids}
+            </foreach>
+    </select>
+
+    <!--public void insertEmp(@Param(value = "emps") List<Emp> emps);-->
+    <insert id="insertEmp">
+        insert into tbl_employee(last_name,gender,email) values
+        <foreach collection="emps" item="emp" separator=",">
+            (#{emp.last_name},#{emp.gender},#{emp.email})
+        </foreach>
+    </insert>
+
+
+</mapper>

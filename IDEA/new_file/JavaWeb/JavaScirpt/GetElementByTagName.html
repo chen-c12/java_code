@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GetElementByTagName</title>
+    <script type="text/javascript">
+        function un() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = true;
+            }
+        }
+        function qqqq() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].checked = false;
+            }
+        }
+        function www() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked){
+                    inputs[i].checked = false;
+                } else {
+                    inputs[i].checked = true;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox" value="cpp">C++
+    <input type="checkbox" value="java">java
+    <input type="checkbox" value="js">JavaScript
+    <br/>
+    <button onclick="un()">全选</button>
+    <button onclick="qqqq()">全不选</button>
+    <button onclick="www()">反选</button>
+
+</body>
+</html>
